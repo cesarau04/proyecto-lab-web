@@ -1,108 +1,185 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .center-sign {
-  border-radius: 1px;
-  margin-top: 25vh;
-  padding: 30px;
-  color: white;
-  min-height: 50vh;
-  min-width: 900px;
+    border-radius: 1px;
+    margin-top: 25vh;
+    padding: 30px;
+    color: white;
+    min-height: 300px;
+    min-width: 800px;
 }
 
 .right-medium-sign {
-  border-radius:1px;
-  min-height: 40vh;
-  min-width: 150px;
-  padding: 20px;
+    border-radius: 1px;
+    min-height: 200px;
+    min-width: 150px;
+    padding: 20px;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 li {
-  display: inline;
-  color: white;
-  margin-right: 30px;
-  font-weight: bold;
+    display: inline;
+    color: white;
+    margin-right: 30px;
+    font-weight: bold;
 }
 
 .nav-bar {
-  width: 10000 !important;
+    width: 10000 !important;
 }
 
 .bgGr1 {
-  background: linear-gradient(135deg, rgba(120, 130, 243, 1) 15%, rgba(0, 212, 255, 1) 100%) !important;
-  color: white;
+    background: linear-gradient(135deg, rgba(120, 130, 243, 1) 15%, rgba(0, 212, 255, 1) 100%) !important;
+    color: white;
 }
 
-.bgGr2{
-  background: linear-gradient(135deg, rgba(57, 116, 210, 1) 20%, rgba(53, 182, 178, 1) 100%) !important;
-  color: white;
+.bgGr2 {
+    background: linear-gradient(135deg, rgba(57, 116, 210, 1) 20%, rgba(53, 182, 178, 1) 100%) !important;
+    color: white;
 }
 
-.bgCr1{
-  background: linear-gradient(180deg, rgba(57, 116, 210, 1) 15%, rgba(255, 255, 255, 1) 15.1%) !important;
+.bgCr1 {
+    background: linear-gradient(180deg, rgba(57, 116, 210, 1) 15%, rgba(255, 255, 255, 1) 15.1%) !important;
 }
 
-.bgVr1{
-  background-image: url(/Img/v2.png);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-attachment: absolute;
-  background-size: 470px;
+.bgVr1 {
+    background-image: url(/Img/v2.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
 }
 
-.bgVr2{
-  background-image:  url(/Img/v4.png);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-attachment: absolute;
-  background-size:600px;
-  background-position: center;
+.bgVr2 {
+    background-image: url(/Img/v4.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 600px;
+    background-position: center;
 }
 
-.bgVr3{
-  background-image: url(/Img/v1.png);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-attachment: absolute;
-  background-size: 470px;
+.bgVr3 {
+    background-image: url(/Img/v1.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
 }
 
-.bgVr4{
-  background-image: url(/Img/v3.png);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-attachment: absolute;
-  background-size: 470px;
+.bgVr4 {
+    background-image: url(/Img/v3.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
 }
 
-.bgWhite{
-  background-color: white;
-  color: black;
+.bgVr5 {
+    background-image: url(/Img/v5.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
 }
 
-.bold{
-  font-weight: bold;
+.bgVr6 {
+    background-image: url(/Img/v6.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
 }
 
-.Active{
-  color: #2196f3 !important; 
+.bgVr7 {
+    background-image: url(/Img/v7.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 470px;
+    background-position-y: center;
+    background-position-x: 75px;
 }
 
-.DarkNav{
-  color: #455a64;
+.bgVr8 {
+    background-image: url(/Img/v8.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: absolute;
+    background-size: 450px;
+    background-position-y: center;
+}
+
+.bgWhite {
+    background-color: white;
+    color: black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.Active {
+    color: #2196f3 !important;
+}
+
+.DarkNav {
+    color: #455a64;
+}
+
+.logo-big img {
+    width: 350px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: -50px;
+}
+
+.logo-small img {
+    width: 100px;
+    margin-left: -2 0px;
+    margin-top: -20px;
+    float: right;
+}
+
+.parallax-container {
+    max-height: 200px;
+    width: 120%;
+    margin-left: -10%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #1c6fff;
+    font-weight: bold;
+    font-family: theboldfont;
+}
+
+.txtWhite {
+    color: white !important;
+}
+
+.mrgTopCorrection {
+    margin-top: -4px;
+}
+
+.elegant {
+    font-family: champagne;
 }

@@ -6,8 +6,24 @@ body {
     background-color: #d2e1ff;
     background-image: url(/Img/bg-pattern-1.png);
     background-size: 300px;
+    background-attachment: fixed;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+    font-family: 'theboldfont';
+    src: local(theboldfont), url(./fonts/theboldfont-regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'champagne';
+    src: local(theboldfont), url(./fonts/champagne-regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'champagne-italic';
+    src: local(theboldfont), url(./fonts/champagne-italic.ttf) format('truetype');
 }
