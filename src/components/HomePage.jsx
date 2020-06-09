@@ -6,17 +6,26 @@ import './StayNear.css';
 
 // Create a react component
 const HomePage = function(){
-    return <div className="container">
-        <div className="z-depth-3 waves-effect waves-light center-sign">
-        <div>
-          <div>
+    return <div className="container center">
+      <div className="z-depth-3 waves-effect waves-light center-sign">
+        <div className="nav-bar">
+          <div className="left">
               <ul>
                 <li>Home</li>
                 <li>People</li>
                 <li>About</li>
                 <li>Help</li>
-              </ul></div>
+              </ul>
             </div>
+          
+            <div className="right">
+              <lu>
+                <li>
+                  LOGO
+                </li>
+              </lu>
+            </div>
+          </div>
         </div>
     </div>;
 };
