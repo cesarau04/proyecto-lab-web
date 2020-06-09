@@ -17,10 +17,10 @@ const NavBar = (props) => {
                 </ul>
             </div>
 
-            <div className="right">
+            <div className={(props.logoSize === 'Big'?'logo-big':'logo-small')} >
                 <lu>
                     <li>
-                        LOGO
+                        <img src="/Img/logo.png" />
                 </li>
                 </lu>
             </div>

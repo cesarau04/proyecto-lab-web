@@ -9,7 +9,7 @@ import './StayNear.css';
 const SignupPage = () => {
     return (
         <div className="container center" >
-            <div className="z-depth-3 waves-effect waves-light center-sign bgVr3">
+            <div className="z-depth-3 waves-effect waves-light center-sign bgVr8">
                 <NavBar current={"Sign"} dark={"True"}/>
                 <SignupForm />
             </div>

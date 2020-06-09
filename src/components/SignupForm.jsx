@@ -6,7 +6,7 @@ const SignupForm = () => {
     return (
         <div className="bgCr1 right-medium-sign right z-depth-3 waves-effect waves-light">
             <div className="row center bold">
-                Sign Up
+                <h5 className="txtWhite mrgTopCorrection">Sign Up</h5>
             </div>
 
             <div className="row">
@@ -27,7 +27,7 @@ const SignupForm = () => {
 
             <div className="row center">
                 <div className="col s12">
-                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" >Register</button>
+                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" ><p className="elegant mrgTopCorrection">Register</p></button>
                 </div>
             </ div>
         </div>

@@ -9,7 +9,7 @@ import './StayNear.css';
 const HomePage = function () {
   return <div className="container center">
     <div className="z-depth-3 waves-effect waves-light center-sign bgVr1">
-      <NavBar />
+      <NavBar logoSize={"Big"} current={"Host"}/>
     </div>
   </div>;
 };

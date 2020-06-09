@@ -9,8 +9,8 @@ import './StayNear.css';
 const LoginPage = () => {
     return (
         <div className="container center" >
-            <div className="z-depth-3 waves-effect waves-light center-sign bgVr1">
-                <NavBar current={"Log"}/>
+            <div className="z-depth-3 waves-effect waves-light center-sign bgVr7">
+                <NavBar logoSize={""} current={"Log"} dark={"True"}/>
                 <LoginForm />
             </div>
         </div>
