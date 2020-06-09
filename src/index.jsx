@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import Becomehost from './components/HostPage';
+import ProfilePage from './components/ProfilePage'
 import 'materialize-css/dist/css/materialize.min.css';
 import './fonts/theboldfont-regular.ttf'
 import './fonts/champagne-regular.ttf'
@@ -14,7 +15,7 @@ import 'typeface-roboto'
 ReactDOM.render(
   <React.StrictMode>
     {/* <HomePage /> */}
-    <SignupPage />
+    <ProfilePage/>
   </React.StrictMode>,
   document.getElementById('root')
 );

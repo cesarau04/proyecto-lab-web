@@ -4,7 +4,7 @@ import './StayNear.css';
 
 const SignupForm = () => {
     return (
-        <div className="bgCr1 right-medium-sign right z-depth-3 waves-effect waves-light">
+        <div className="bgCr1 right-medium-sign right z-depth-3">
             <div className="row center bold">
                 <h5 className="txtWhite mrgTopCorrection">Sign Up</h5>
             </div>
