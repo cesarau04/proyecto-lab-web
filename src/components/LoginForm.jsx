@@ -3,50 +3,34 @@ import ReactDOM from 'react-dom';
 import './StayNear.css';
 
 const LoginForm = () => {
-    return ( 
+    return (
         <div className="bgCr1 right-medium-sign right z-depth-3 waves-effect waves-light">
-        <div className="row center">
-            INICIAR SESIÓN
+            <div className="row center bold">
+                Welcome
+            </div>
+
+            <div className="row">
+                <div className="input-field col s12">
+                    <input placeholder="Email" id="input_email" type="email" name="aemail" className="validate" required />
+                    <label htmlFor="email"></label>
                 </div>
-        <div className="row">
-            <div className="col s3"></div>
-            <div className="col s12">
-                <label htmlFor="aemail"><b>Correo electrónico</b></label>
             </div>
-            <div className="col s12"></div>
-        </div>
-        <div className="row center">
-            <div className="col s12"></div>
-            <div className="col s12">
-                <input id="input_email" type="text" name="aemail" className="validate" required />
-            </div>
-            <div className="col s3"></div>
-        </div>
 
-        <div className="row">
-            <div className="col s12"></div>
-            <div className="col s12">
-                <label htmlFor="apassword"><b>Contraseña</b></label>
-            </div>
-            <div className="col s12"></div>
-        </div>
 
-        <div className="row center">
-            <div className="col s12"></div>
-            <div className="col s12">
-                <input id="input_password" type="password" name="apassword" className="validate" required />
+            <div className="row">
+                <div className="input-field col s12">
+                    <input placeholder="password" id="input_password" type="password" name="apassword" className="validate" required/>
+                </div>
             </div>
-            <div className="col s12"></div>
-        </div>
 
-        <div className="row center">
-            <div className="col s12"></div>
-            <div className="col s12">
-                <button className="btn btn-block waves-effect waves-light" type="submit" >Iniciar sesión</button>
-            </div>
-            <div className="col s3"></div>
-        </ div>
-    </div>
+            
+
+            <div className="row center">
+                <div className="col s12">
+                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" >Take me home</button>
+                </div>
+            </ div>
+        </div>
     );
 }
 export default LoginForm;
