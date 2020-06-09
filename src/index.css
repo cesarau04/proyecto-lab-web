@@ -4,6 +4,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #d2e1ff;
+    background-image: url(/Img/bg-pattern-1.png);
 }
 
 code {
