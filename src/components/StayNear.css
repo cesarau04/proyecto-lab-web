@@ -12,8 +12,7 @@ code {
 .center-sign{
     background: linear-gradient(180deg, rgba(120,130,243,1) 57%, rgba(0,212,255,1) 100%) !important;
     border-radius: 25px;
-    min-height: 50vh;
-    margin-top: 25vh;
+    margin-top: 25vh;    
     padding:30px;
     color: white;
     min-height: 50vh;
@@ -32,4 +31,8 @@ ul {
     color: white;
     margin-right: 30px;
     font-weight: bold;
+  }
+
+  .nav-bar{
+width: 10000 !important;
   }
