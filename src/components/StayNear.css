@@ -20,7 +20,7 @@ code {
 }
 
 .right-medium-sign {
-  border-radius: 10px;
+  border-radius:1px;
   min-height: 40vh;
   min-width: 150px;
   padding: 20px;
@@ -74,7 +74,35 @@ li {
   background-position: center;
 }
 
+.bgVr3{
+  background-image: url(/Img/v1.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-size: 470px;
+}
+
+.bgVr4{
+  background-image: url(/Img/v3.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-size: 470px;
+}
+
 .bgWhite{
   background-color: white;
   color: black;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.Active{
+  color: #2196f3 !important; 
+}
+
+.DarkNav{
+  color: #455a64;
 }

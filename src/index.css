@@ -5,6 +5,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #d2e1ff;
     background-image: url(/Img/bg-pattern-1.png);
+    background-size: 300px;
 }
 
 code {
