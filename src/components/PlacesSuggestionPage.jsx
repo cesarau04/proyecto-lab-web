@@ -5,22 +5,20 @@ import "./StayNear.css";
 import myFirebaseInstance from "../firebase/myfirebase";
 
 const PlacesSuggestionPage = (props) => {
-  const [readDB, setReadDB] = useState(true);
-  const [rooms, setRooms] = useState({});
+  const [rooms, setRooms] = useState(null)
+
   const myFirebase = myFirebaseInstance.getInstance();
 
   useEffect(() => {
-    if (readDB) {
-      myFirebase
-        .database()
-        .ref()
-        .child("rooms")
-        .once("value", (snapshot) => {
-          setRooms(snapshot.val());
+    myFirebase.database().ref("rooms").once('value',
+      (snapshot) => {
+        let newRooms = []
+        snapshot.forEach((room) => {
+          newRooms.push(room.val());
         });
-      setReadDB(false);
-    }
-  });
+        setRooms(newRooms)
+      });
+  }, []);
 
   return (
     <div
@@ -29,22 +27,17 @@ const PlacesSuggestionPage = (props) => {
       <div
         className={props.background === "true" ? "card-content white-text" : ""}
       >
-        {[rooms].map((child, key, arr) => {
-          console.log(child);
-          console.log(key);
-          console.log(arr);
-
-          console.log("======================");
-        })}
-        {/* <div className="row">
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                </div> */}
+        {
+          rooms &&
+          rooms.map((room) => {
+            console.log(room);
+            return (
+              <>
+                <PlaceCard key={room.key} rowSize={props.rowSize} title={room.title} description={room.description} price={room.price1}/>
+              </>
+            )
+          })
+        }
       </div>
     </div>
   );
