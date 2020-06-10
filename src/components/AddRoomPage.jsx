@@ -153,7 +153,7 @@ const AddRoomPage = () => {
                 </div>
               </form>
               <button
-                className="waves-effect waves-light blue darken-2 btn-large"
+                className="waves-effect waves-light blue darken-2 btn-large bold"
                 type="submit"
                 name="action"
                 onClick={createRoom}

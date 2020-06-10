@@ -96,6 +96,21 @@ const SignupForm = (props) => {
       <div className="row">
         <div className="input-field col s12">
           <input
+            placeholder="Phone Number"
+            id="input_username"
+            type="tel"
+            name="aphonenumer"
+            className="validate"
+            // ref={phonenumberRef}
+            required
+          />
+          <label htmlFor="(+XX) XXX XXX XX XX"></label>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="input-field col s12">
+          <input
             placeholder="Email"
             id="input_email"
             type="email"
@@ -125,11 +140,11 @@ const SignupForm = (props) => {
       <div className="row center">
         <div className="col s12">
           <button
-            className="bold btn waves-effect waves-light  btn-large blue "
+            className="bold waves-effect waves-light  btn-large blue "
             type="submit"
             onClick={handleSignUp}
           >
-            <p className="elegant mrgTopCorrection">Register</p>
+            <p className="mrgTopCorrection">Register</p>
           </button>
         </div>
       </div>

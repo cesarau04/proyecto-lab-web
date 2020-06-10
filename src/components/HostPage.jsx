@@ -40,7 +40,7 @@ const BecomehostPage = () => {
             </div>
           </div>
           <button
-            className="waves-effect waves-light blue darken-2 btn-large"
+            className="waves-effect waves-light blue darken-2 btn-large bold"
             type="submit"
             name="action"
             onClick={goAddRoom}
