@@ -30,12 +30,9 @@ const PlacesSuggestionPage = (props) => {
         {
           rooms &&
           rooms.map((room) => {
-            console.log(room);
             return (
-              <>
-                <PlaceCard key={room.key} rowSize={props.rowSize} title={room.title} description={room.description} price={room.price1}/>
-              </>
-            )
+              <PlaceCard rowSize={props.rowSize} title={room.title} description={room.description} price={room.price1} />
+            );
           })
         }
       </div>

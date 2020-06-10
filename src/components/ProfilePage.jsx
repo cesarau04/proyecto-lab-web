@@ -22,15 +22,15 @@ const ProfilePage = () => {
             </div>
             <div className="col s8 waves-effect waves-light ">
               <h4>Profile Info</h4>
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Correo</span>
+              <div className="card blue-grey darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">Correo</span>
                   <p>{localStorage.getItem("useremail")}</p>
                 </div>
               </div>
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Historial</span>
+              <div className="card blue-grey darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">Historial</span>
                   <p>-Rentó cuarto a XXXX el dia xx/xx/xxxx</p>
                   <p>-Rentó cuarto a XXXX el dia xx/xx/xxxx</p>
                 </div>
