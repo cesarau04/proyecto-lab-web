@@ -34,8 +34,6 @@ const AddRoomPage = () => {
         userid: localStorage.getItem("userid"),
       })
       .then((snapshot) => {
-        console.log(snapshot.key);
-
         // push to /users/{id}/rooms/
         myFirebase
           .database()

@@ -11,7 +11,6 @@ import {
 } from "react-notifications";
 
 import "./StayNear.css";
-// import 'react-notifications/lib/Notifications.css'
 
 const LoginForm = (props) => {
   const emailRef = useRef(null);
@@ -37,6 +36,7 @@ const LoginForm = (props) => {
           props.dispatch(LogInAction(true));
           props.dispatch(UserIdAction(data.user.uid));
           localStorage.setItem("userid", data.user.uid);
+          localStorage.setItem("useremail", currentEmail);
           history.push("/home");
         })
         .catch((error) => {
