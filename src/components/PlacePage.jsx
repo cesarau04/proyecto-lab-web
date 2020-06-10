@@ -15,28 +15,28 @@ const PlacePage = () => {
                     <div className="row">
                         <div className="col s8">
 
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
+                            <div className="card blue-grey darken-1">
+                                <div className="card-content white-text">
                                     <img className="img-medium waves-effect waves-light " src="Img/stock-pictures/room-stock.png" alt="" />
                                     Place Pictures
                                 </div>
                             </div>
                         </div>
                         <div className="col s4 waves-effect waves-light ">
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">Cuarto en Solares</span>
+                            <div className="card blue-grey darken-1">
+                                <div className="card-content white-text">
+                                    <span className="card-title">Cuarto en Solares</span>
                                     <p>300$ por </p> <a href="">Juan Perez</a>
                                 </div>
                             </div>
-                            <div class="card blue-grey darken-1">
-                                <div class="card-content white-text">
-                                    <span class="card-title">Descripción</span>
+                            <div className="card blue-grey darken-1">
+                                <div className="card-content white-text">
+                                    <span className="card-title">Descripción</span>
                                     <p>-Un cuarto disponible en Solares cerca del TEC Campus Guadalajara</p>
                                     <p>-Cuenta con baño proio. Uso exclusivo para estudiantes del TEC sin importar el género</p>
                                 </div>
                             </div>
-                            <a class="waves-effect waves-light btn-large">STAY IN HERE</a>
+                            <a className="waves-effect waves-light btn-large">STAY IN HERE</a>
                         </div>
                     </div>
                     <div className="row">
