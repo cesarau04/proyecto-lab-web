@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import NavBar from "./NavBar";
 import { useHistory } from "react-router-dom";
 
+import { useEffect } from "react";
+import M from "materialize-css";
+
 import "./StayNear.css";
 
 import myFirebaseInstance from "../firebase/myfirebase";
@@ -12,6 +15,11 @@ const AddRoomPage = () => {
   const roomDescRef = useRef(null);
   const roomPriceRef = useRef(null);
   const roomPicRef = useRef(null);
+
+  useEffect(() => {
+    let elements = document.querySelectorAll("select");
+    let instances = M.FormSelect.init(elements);
+  }, []);
 
   const createRoom = () => {
     const myFirebase = myFirebaseInstance.getInstance();
@@ -94,23 +102,19 @@ const AddRoomPage = () => {
                 <div className="file-field input-field">
                   <div className="btn blue darken-2">
                     <span>Picture</span>
+                    <input type="file" ref={roomPicRef}></input>
                   </div>
                   <div className="file-path-wrapper">
-                    <input
-                      className="file-path- validate"
-                      type="text"
-                      ref={roomPicRef}
-                    />
+                    <input className="file-path validate" type="text" />
                   </div>
                 </div>
               </form>
               <button
-                class="waves-effect waves-light blue darken-2 btn-large"
+                className="waves-effect waves-light blue darken-2 btn-large"
                 type="submit"
                 name="action"
                 onClick={createRoom}
               >
-                {" "}
                 Create my Room
               </button>
             </form>
