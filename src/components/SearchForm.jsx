@@ -12,7 +12,7 @@ const SearchForm = () => {
             </form>
             <div className="input-field col s12">
                 <select>
-                    <option value="" disabled selected>Choose a state</option>
+                    <option value="" disabled defaultValue>Choose a state</option>
                     <option value="1">Nayarit</option>
                     <option value="2">Jalisco</option>
                     <option value="3">Monterrey</option>
@@ -23,7 +23,7 @@ const SearchForm = () => {
 
             <div className="input-field col s12">
                 <select>
-                    <option value="" disabled selected>Choose a School</option>
+                    <option value="" disabled defaultValue>Choose a School</option>
                     <option value="1">ITESM</option>
                     <option value="2">ITESO</option>
                     <option value="3">UNAM</option>

@@ -41,6 +41,7 @@ const Privateroutes = props => {
         return (
             <Fragment>
                 <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/signup" component={SignupPage} />
                 <Route exact path="*" render={() => <Redirect to="/login" />} />
             </Fragment>
         );

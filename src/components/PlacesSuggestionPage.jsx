@@ -5,8 +5,8 @@ import './StayNear.css';
 
 const PlacesSuggestionPage = (props) => {
     return (
-    <div class={(props.background === 'true' ? 'card blue-grey darken-1' : '')}>
-        <div class={(props.background === 'true' ? 'card-content white-text' : '')}>
+    <div className={(props.background === 'true' ? 'card blue-grey darken-1' : '')}>
+        <div className={(props.background === 'true' ? 'card-content white-text' : '')}>
             <div className="row">
                 <PlaceCard rowSize={props.rowSize}/>
                 <PlaceCard rowSize={props.rowSize}/>
