@@ -1,7 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import NavBar from './NavBar';
-import PlacesSuggestionPage from './PlacesSuggestionPage'
+import MyRooms from './MyRooms'
 import './StayNear.css';
 
 // LOGICA DE FIREBASE
@@ -21,8 +20,8 @@ const ProfilePage = () => {
                             <h4>Profile Info</h4>
                             <div class="card blue-grey darken-1">
                                 <div class="card-content white-text">
-                                    <span class="card-title">Matrícula</span>
-                                    <p>A01630908</p>
+                                    <span class="card-title">Correo</span>
+                                    <p>a01630908@itesm.mx</p>
                                 </div>
                             </div>
                             <div class="card blue-grey darken-1">
@@ -37,7 +36,7 @@ const ProfilePage = () => {
                     </div>
                     <div className="row">
                         <div className="col s12">
-                            <PlacesSuggestionPage background={"true"}/>
+                            <MyRooms background={"true"}/>
                         </div>
                     </div>
                 </div>
