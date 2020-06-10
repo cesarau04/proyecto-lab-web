@@ -19,7 +19,7 @@ const HomePage = function () {
       <br/><br/><br/>
       <ParallaxImage/>
       <div className="container">
-      <h3 cent>About the Project</h3>
+      <h3 className="center">About the Project</h3>
       <p className="txtBlack elegant">
       SleepTalk is a project in development that focuses in helping TEC students that have trouble with a troublesome
       schedule. Currently, a couple of courses end at 9:30pm yet others start at 7:00am. This causes unnecessary fatigue

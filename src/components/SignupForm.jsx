@@ -67,7 +67,7 @@ const SignupForm = (props) => {
 
             <div className="row center">
                 <div className="col s12">
-                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" ><p className="elegant mrgTopCorrection">Register</p></button>
+                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" onClick={handleSignUp}><p className="elegant mrgTopCorrection">Register</p></button>
                 </div>
             </ div>
         </div>
