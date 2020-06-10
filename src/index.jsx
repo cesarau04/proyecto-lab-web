@@ -7,6 +7,8 @@ import SignupPage from './components/SignupPage';
 import Becomehost from './components/HostPage';
 import ProfilePage from './components/ProfilePage';
 import PlacePage from './components/PlacePage';
+import HostPage from './components/HostPage';
+import SearchPage from './components/SearchPage'
 import 'materialize-css/dist/css/materialize.min.css';
 import './fonts/theboldfont-regular.ttf'
 import './fonts/champagne-regular.ttf'

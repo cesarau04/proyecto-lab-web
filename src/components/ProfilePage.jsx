@@ -36,7 +36,7 @@ const ProfilePage = () => {
                     </div>
                     <div className="row">
                         <div className="col s12">
-                            <PlacesSuggestionPage/>
+                            <PlacesSuggestionPage background={"true"}/>
                         </div>
                     </div>
                 </div>
