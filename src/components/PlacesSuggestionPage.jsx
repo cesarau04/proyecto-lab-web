@@ -5,9 +5,9 @@ import './StayNear.css';
 
 const PlacesSuggestionPage = () => {
     return (
-    <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-            <span class="card-title">Stay Near</span>
+    <div className="card blue-grey darken-1">
+        <div className="card-content white-text">
+            <span className="card-title">Stay Near</span>
             <div className="row">
                 <PlaceCard/>
                 <PlaceCard/>
