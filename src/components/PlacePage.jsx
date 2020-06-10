@@ -13,7 +13,7 @@ const PlacePage = () => {
                 <div className="container">
                     <h4>Place Info</h4>
                     <div className="row">
-                        <div className="col s8">
+                        <div className="col s12 m8">
 
                             <div className="card blue-grey darken-1">
                                 <div className="card-content white-text">
@@ -41,7 +41,7 @@ const PlacePage = () => {
                     </div>
                     <div className="row">
                         <div className="col s12">
-                            <PlacesSuggestionPage />
+                            <PlacesSuggestionPage rowSize={"2"} background={"true"}/>
                         </div>
                     </div>
                 </div>

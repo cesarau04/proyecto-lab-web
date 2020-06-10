@@ -3,19 +3,18 @@ import PlaceCard from './PlaceCard';
 import './StayNear.css';
 // LOGICA DE FIREBASE
 
-const PlacesSuggestionPage = () => {
+const PlacesSuggestionPage = (props) => {
     return (
-    <div className="card blue-grey darken-1">
-        <div className="card-content white-text">
-            <span className="card-title">Stay Near</span>
+    <div class={(props.background === 'true' ? 'card blue-grey darken-1' : '')}>
+        <div class={(props.background === 'true' ? 'card-content white-text' : '')}>
             <div className="row">
-                <PlaceCard/>
-                <PlaceCard/>
-                <PlaceCard/>
-                <PlaceCard/>
-                <PlaceCard/>
-                <PlaceCard/>
-                <PlaceCard/>            
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>
+                <PlaceCard rowSize={props.rowSize}/>            
             </div>   
         </div>
     </div>           

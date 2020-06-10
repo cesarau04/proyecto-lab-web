@@ -2,12 +2,12 @@ import React from 'react'
 import './StayNear.css';
 // LOGICA DE FIREBASE
 
-const PlaceCard = () => {
+const PlaceCard = (props) => {
     return (
-    <div className="col s4">
-        <div className="card blue-grey darken-1">
-                <div className="card-image waves-effect waves-block waves-light">
-                    <img className="activator" src="Img/v8.png"/>
+    <div className={(props.rowSize === '2' ? 'col s6' : 'col s4')}>
+        <div class="card blue-grey darken-1">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="Img/v8.png"/>
                 </div>
             <div className="card-content white-text">
                 <span className="card-title">Cuarto #1</span>
