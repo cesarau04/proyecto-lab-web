@@ -37,6 +37,8 @@ const LoginForm = (props) => {
           props.dispatch(UserIdAction(data.user.uid));
           localStorage.setItem("userid", data.user.uid);
           localStorage.setItem("useremail", currentEmail);
+          myFirebase.database().ref("users").child(data.user.uid).child("profile").child("username").once('value', 
+            (snapshot) => {localStorage.setItem("username", snapshot.val()); console.log(snapshot.val())});
           history.push("/home");
         })
         .catch((error) => {

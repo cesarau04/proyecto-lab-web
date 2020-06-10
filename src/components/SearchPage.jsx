@@ -9,50 +9,50 @@ import myFirebaseInstance from "../firebase/myfirebase";
 const SearchPage = () => {
   const [rooms, setRooms] = useState(null)
   const [bkpRooms, setBkpRooms] = useState(null)
-
+  const [bShouldDownlaod, setbShouldDownload] = useState(true)
   const myFirebase = myFirebaseInstance.getInstance();
 
   useEffect(() => {
-    // probably a bool to avoid re-dowload of records
-    myFirebase.database().ref("rooms").once('value',
-      (snapshot) => {
-        let newRooms = []
-        snapshot.forEach((room) => {
-          newRooms.push(room.val());
+    if (bShouldDownlaod) {
+      myFirebase.database().ref("rooms").once('value',
+        (snapshot) => {
+          let newRooms = []
+          snapshot.forEach((room) => {
+            newRooms.push(room.val());
+          });
+          setRooms(newRooms)
+          setBkpRooms(newRooms)
         });
-        setRooms(newRooms)
-        setBkpRooms(newRooms)
-      });
+      setbShouldDownload(false)
+    }
   }, []);
 
   const filterRooms = (filters) => {
-    let filteredRooms = []
+    console.log(rooms);
+    
+    let filteredRooms = bkpRooms.slice()
 
     const filterPrice = (room, _case) => {
       switch (_case) {
         case "<100":
-          return room.price < 100 ? true : false;
+          return Number(room.price) < 100 ? true : false;
         case "100-250":
-          return (room.price >= 100) && (room.price <= 250) ? true : false;
+          return (Number(room.price) >= 100) && (Number(room.price) <= 250) ? true : false;
         case ">250":
-          return room.price > 250 ? true : false;
+          return Number(room.price) > 250 ? true : false;
         default:
-          return false;
+          return true;
       }
     }
-    const filterState = (room, compareTo) => {
-      return room.state === compareTo ? true : false;
-    };
 
-    const filterSchool = (room, compareTo) => {
-      return room.school === compareTo ? true : false;
-    }
+    // filteredRooms = bkpRooms.filter(filterPrice(filters.price)
+    filteredRooms = filteredRooms.filter(room => room.state === filters.state)
+    filteredRooms = filteredRooms.filter(room => room.school === filters.school)
 
-    filteredRooms = bkpRooms.filter(filterPrice)
-    filteredRooms = filteredRooms.filter(filterState)
-    filteredRooms = filteredRooms.filter(filterSchool)
-
-    setRooms(filterRooms)
+    console.log("FILTERED ROOMS");
+    console.log(filteredRooms);
+    
+    setRooms(filteredRooms)
   };
 
   return (

@@ -16,7 +16,6 @@ const AddRoomPage = () => {
   const roomPriceRef = useRef(null);
   const roomPicRef = useRef(null);
 
-  const [selectedPrice, setSelectedPrice] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
   const [selectedSchool, setSelectedSchool] = useState(null);
 
@@ -47,6 +46,8 @@ const AddRoomPage = () => {
         name: nameVal,
         description: descriptionVal,
         price: priceVal,
+        state: selectedState ? selectedState : "Jalisco",
+        school: selectedSchool ? selectedSchool : "ITESM",
         picture: pictureVal, // TODO: Change this to file
         userid: localStorage.getItem("userid"),
       })
@@ -62,6 +63,8 @@ const AddRoomPage = () => {
             name: nameVal,
             description: descriptionVal,
             price: priceVal,
+            state: selectedState ? selectedState : "Jalisco",
+            school: selectedSchool ? selectedSchool : "ITESM",
             picture: pictureVal, // TODO: Change this to file
           });
       });
