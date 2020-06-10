@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import NavBar from "./NavBar";
 import { useHistory } from "react-router-dom";
 
@@ -15,6 +15,15 @@ const AddRoomPage = () => {
   const roomDescRef = useRef(null);
   const roomPriceRef = useRef(null);
   const roomPicRef = useRef(null);
+
+  const [selectedPrice, setSelectedPrice] = useState(null);
+  const [selectedState, setSelectedState] = useState(null);
+  const [selectedSchool, setSelectedSchool] = useState(null);
+
+  useEffect(() => {
+    let elements = document.querySelectorAll("select");
+    let instances = M.FormSelect.init(elements);
+  }, []);
 
   useEffect(() => {
     let elements = document.querySelectorAll("select");
@@ -64,10 +73,12 @@ const AddRoomPage = () => {
     <div className="container center">
       <div className="z-depth-3 center-sign bgVr5">
         <NavBar logoSize={""} current={"Host"} dark={"True"} />
-        <div className="container">
+        <div className="">
           <div className="row">
-            <div className="col s6"></div>
-            <form className="col s6">
+            <div className="col s12 m6 center">
+              <h3>Register a Room</h3>
+            </div>
+            <form className="col s12 m5">
               <div className="row">
                 <input
                   type="text"
@@ -98,6 +109,35 @@ const AddRoomPage = () => {
                   required
                 />
               </div>
+              <div className="row">
+                <div className="input-field col s12">
+                  <select onChange={(e) => setSelectedState(e.target.value)}>
+                    <option value="Jalisco" defaultValue>
+                      Jalisco
+                    </option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Monterrey">Monterrey</option>
+                    <option value="Cd. de México">Cd. de México</option>
+                  </select>
+                  <label>State</label>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="input-field col s12">
+                  <select onChange={(e) => setSelectedSchool(e.target.value)}>
+                    <option value="ITESM" defaultValue>
+                      ITESM
+                    </option>
+                    <option value="ITESO">ITESO</option>
+                    <option value="UNAM">UNAM</option>
+                    <option value="UDG">UDG</option>
+                    <option value="UAG">UAG</option>
+                  </select>
+                  <label>School</label>
+                </div>
+              </div>
+
               <form action="#">
                 <div className="file-field input-field">
                   <div className="btn blue darken-2">
