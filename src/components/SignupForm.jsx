@@ -96,6 +96,21 @@ const SignupForm = (props) => {
       <div className="row">
         <div className="input-field col s12">
           <input
+            placeholder="Phone Number"
+            id="input_username"
+            type="tel"
+            name="aphonenumer"
+            className="validate"
+            // ref={phonenumberRef}
+            required
+          />
+          <label htmlFor="(+XX) XXX XXX XX XX"></label>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="input-field col s12">
+          <input
             placeholder="Email"
             id="input_email"
             type="email"
