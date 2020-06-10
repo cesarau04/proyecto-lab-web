@@ -1,8 +1,16 @@
 import React from 'react'
+import { useEffect } from "react";
+import M from "materialize-css"
 import './StayNear.css';
 // LOGICA DE FIREBASE
 
 const SearchForm = () => {
+
+    useEffect(() => {
+        let elements = document.querySelectorAll("select");
+        let instances = M.FormSelect.init(elements);
+    }, []);
+    
     return (
         <div>
             <form action="#">
