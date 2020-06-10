@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
 import { connect } from 'react-redux';
 import myFirebaseInstance from '../firebase/myfirebase'
@@ -22,14 +22,14 @@ const SignupForm = (props) => {
         let currentPassword = passwordRef.current.value
 
         if (currentEmail !== "" && currentEmail && currentPassword !== "" && currentPassword) {
-            firebase.auth().createUserWithEmailAndPassword(currentEmail, currentPassword)
+            myFirebase.auth().createUserWithEmailAndPassword(currentEmail, currentPassword)
                 .then((data) => {
                     NotificationManager.success('Created', 'Account was created', 4000)
                     props.dispatch(LogInAction(true))
                     props.dispatch(UserIdAction(data.user.uid))
                     localStorage.setItem('userid', data.user.uid)
                     history.push("/home");
-                    const storage = firebase.storage()
+                    const storage = myFirebase.storage()
                     storage.ref().child("users").child(data.user.uid).child("profile_pic").putString("64byte profile.png")
                     // .then((snapshot) => {
                     //     console.log(snapshot);
