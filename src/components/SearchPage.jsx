@@ -8,6 +8,7 @@ import myFirebaseInstance from "../firebase/myfirebase";
 
 const SearchPage = () => {
   const [rooms, setRooms] = useState(null)
+  const [bkpRooms, setBkpRooms] = useState(null)
 
   const myFirebase = myFirebaseInstance.getInstance();
 
@@ -20,13 +21,38 @@ const SearchPage = () => {
           newRooms.push(room.val());
         });
         setRooms(newRooms)
+        setBkpRooms(newRooms)
       });
   }, []);
 
   const filterRooms = (filters) => {
-    for(var room in rooms) {
-      
+    let filteredRooms = []
+
+    const filterPrice = (room, _case) => {
+      switch (_case) {
+        case "<100":
+          return room.price < 100 ? true : false;
+        case "100-250":
+          return (room.price >= 100) && (room.price <= 250) ? true : false;
+        case ">250":
+          return room.price > 250 ? true : false;
+        default:
+          return false;
+      }
     }
+    const filterState = (room, compareTo) => {
+      return room.state === compareTo ? true : false;
+    };
+
+    const filterSchool = (room, compareTo) => {
+      return room.school === compareTo ? true : false;
+    }
+
+    filteredRooms = bkpRooms.filter(filterPrice)
+    filteredRooms = filteredRooms.filter(filterState)
+    filteredRooms = filteredRooms.filter(filterSchool)
+
+    setRooms(filterRooms)
   };
 
   return (
