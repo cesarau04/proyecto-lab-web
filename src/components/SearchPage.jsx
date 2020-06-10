@@ -1,5 +1,8 @@
 import React from 'react'
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 import NavBar from './NavBar';
 import PlacesSuggestionPage from './PlacesSuggestionPage';
 import SearchForm from './SearchForm';

@@ -96,6 +96,7 @@ li {
     background-repeat: no-repeat;
     background-attachment: absolute;
     background-size: 470px;
+    background-position-y: center;
 }
 
 .bgVr6 {
@@ -104,6 +105,7 @@ li {
     background-repeat: no-repeat;
     background-attachment: absolute;
     background-size: 470px;
+   
 }
 
 .bgVr7 {
@@ -163,6 +165,10 @@ li {
 
 .parallax img {
     max-height: 900px;
+}
+
+.parallax{
+    z-index: 1!important;
 }
 
 h1,

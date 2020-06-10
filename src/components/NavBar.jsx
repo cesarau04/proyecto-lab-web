@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-
 import './StayNear.css';
 import { useHistory } from "react-router-dom";
 import { LogInAction, UserIdAction } from "../actions/index";
