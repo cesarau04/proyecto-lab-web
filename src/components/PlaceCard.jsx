@@ -4,7 +4,7 @@ import './StayNear.css';
 
 const PlaceCard = () => {
     return (
-    <div className="col s6">
+    <div className="col s4">
         <div class="card blue-grey darken-1">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="Img/v8.png"/>
