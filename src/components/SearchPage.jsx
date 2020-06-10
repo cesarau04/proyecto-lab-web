@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import PlacesSuggestionPage from "./PlacesSuggestionPage";
 import SearchForm from "./SearchForm";
 import "./StayNear.css";
-// LOGICA DE FIREBASE
+
+import myFirebaseInstance from "../firebase/myfirebase";
 
 const SearchPage = () => {
+  const [rooms, setRooms] = useState(null)
+
+  const myFirebase = myFirebaseInstance.getInstance();
+
+  useEffect(() => {
+    // probably a bool to avoid re-dowload of records
+    myFirebase.database().ref("rooms").once('value',
+      (snapshot) => {
+        let newRooms = []
+        snapshot.forEach((room) => {
+          newRooms.push(room.val());
+        });
+        setRooms(newRooms)
+      });
+  }, []);
+
+  const filterRooms = (filters) => {
+    console.log(filters);
+  };
+
   return (
     <div className="container center">
       <div className="z-depth-3 center-sign bgWhite">
@@ -15,10 +36,10 @@ const SearchPage = () => {
           <h5>Book for 1-night & stay with students like you</h5>
           <div className="row">
             <div className="col s12 m4">
-              <SearchForm />
+              <SearchForm callback={filterRooms}/>
             </div>
             <div className="col s12 m8">
-              <PlacesSuggestionPage background={""} />
+              <PlacesSuggestionPage background={""} rooms={rooms}/>
             </div>
           </div>
         </div>

@@ -15,6 +15,8 @@ import "./StayNear.css";
 const SignupForm = (props) => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const usernameRef = useRef(null);
+
   const history = useHistory();
 
   const handleSignUp = () => {
@@ -22,12 +24,15 @@ const SignupForm = (props) => {
 
     let currentEmail = emailRef.current.value;
     let currentPassword = passwordRef.current.value;
+    let currentUsername = usernameRef.current.value;
 
     if (
       currentEmail !== "" &&
       currentEmail &&
       currentPassword !== "" &&
-      currentPassword
+      currentPassword &&
+      currentUsername &&
+      currentUsername !== ""
     ) {
       myFirebase
         .auth()
@@ -38,6 +43,7 @@ const SignupForm = (props) => {
           props.dispatch(UserIdAction(data.user.uid));
           localStorage.setItem("userid", data.user.uid);
           localStorage.setItem("useremail", currentEmail);
+          localStorage.setItem("username", currentUsername);
           history.push("/home");
           const storage = myFirebase.storage();
           storage
@@ -55,7 +61,7 @@ const SignupForm = (props) => {
                 .child("profile")
                 .set({
                   email: currentEmail,
-                  name: currentEmail,
+                  username: currentUsername,
                   picture: "a profile pic",
                 });
             });
@@ -70,6 +76,21 @@ const SignupForm = (props) => {
     <div className="bgCr1 right-medium-sign right z-depth-3">
       <div className="row center bold">
         <h5 className="txtWhite mrgTopCorrection">Sign Up</h5>
+      </div>
+
+      <div className="row">
+        <div className="input-field col s12">
+          <input
+            placeholder="Username"
+            id="input_username"
+            type="text"
+            name="ausername"
+            className="validate"
+            ref={usernameRef}
+            required
+          />
+          <label htmlFor="email"></label>
+        </div>
       </div>
 
       <div className="row">
