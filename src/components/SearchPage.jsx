@@ -11,14 +11,16 @@ const SearchPage = () => {
       <div className="z-depth-3 center-sign bgWhite">
         <NavBar logoSize={""} current={"Search"} dark={"True"} />
         <div className="container">
-          <h2>Search</h2>
-          <h5>Book for 1-night & stay with students like you</h5>
+          <h2 className="DarkNav ">Search</h2>
+          <h5 className="DarkNav ">
+            Book for 1-night & stay with students like you
+          </h5> <br/> <br/>
           <div className="row">
             <div className="col s12 m4">
               <SearchForm />
             </div>
             <div className="col s12 m8">
-              <PlacesSuggestionPage background={""} />
+              <PlacesSuggestionPage rowSize={"2"} background={""} />
             </div>
           </div>
         </div>

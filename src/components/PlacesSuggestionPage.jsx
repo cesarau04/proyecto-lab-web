@@ -31,7 +31,7 @@ const PlacesSuggestionPage = (props) => {
           rooms &&
           rooms.map((room) => {
             return (
-              <PlaceCard rowSize={props.rowSize} title={room.title} description={room.description} price={room.price1} />
+              <PlaceCard rowSize={props.rowSize} title={room.name} description={room.description} price={room.price} />
             );
           })
         }
