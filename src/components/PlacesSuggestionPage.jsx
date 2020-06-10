@@ -1,46 +1,46 @@
-import React, { useState, useEffect } from 'react'
-import PlaceCard from './PlaceCard';
-import './StayNear.css';
+import React, { useState, useEffect } from "react";
+import PlaceCard from "./PlaceCard";
+import "./StayNear.css";
 
-import myFirebaseInstance from '../firebase/myfirebase'
+import myFirebaseInstance from "../firebase/myfirebase";
 
 const PlacesSuggestionPage = (props) => {
-    const [readDB, setReadDB] = useState(true)
-    const [rooms, setRooms] = useState({})
-    const myFirebase = myFirebaseInstance.getInstance()
+  const [rooms, setRooms] = useState(null)
 
-    useEffect(() => {
-        if (readDB) {
-            myFirebase.database().ref().child("rooms").once('value', 
-            (snapshot) => {
-                setRooms(snapshot.val())
-            });
-            setReadDB(false)
+  const myFirebase = myFirebaseInstance.getInstance();
+
+  useEffect(() => {
+    myFirebase.database().ref("rooms").once('value',
+      (snapshot) => {
+        let newRooms = []
+        snapshot.forEach((room) => {
+          newRooms.push(room.val());
+        });
+        setRooms(newRooms)
+      });
+  }, []);
+
+  return (
+    <div
+      className={props.background === "true" ? "card blue-grey darken-1" : ""}
+    >
+      <div
+        className={props.background === "true" ? "card-content white-text" : ""}
+      >
+        {
+          rooms &&
+          rooms.map((room) => {
+            console.log(room);
+            return (
+              <>
+                <PlaceCard key={room.key} rowSize={props.rowSize} title={room.title} description={room.description} price={room.price1}/>
+              </>
+            )
+          })
         }
-    });
-
-    return (
-        <div className={(props.background === 'true' ? 'card blue-grey darken-1' : '')}>
-            <div className={(props.background === 'true' ? 'card-content white-text' : '')}>
-                {[rooms].map((child, key, arr) => {
-                    console.log(child);
-                    console.log(key);
-                    console.log(arr);
-
-                    console.log("======================");
-                })}
-                {/* <div className="row">
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                    <PlaceCard rowSize={props.rowSize} />
-                </div> */}
-            </div>
-        </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default PlacesSuggestionPage;
