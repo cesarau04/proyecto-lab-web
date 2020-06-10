@@ -75,7 +75,7 @@ const SearchForm = (props) => {
         <label>School</label>
       </div>
 
-      <a className="waves-effect waves-light btn" onClick={preCallback}>
+      <a className="waves-effect waves-light btn blue darken-2 bold" onClick={preCallback}>
         FILTER
       </a>
     </div>

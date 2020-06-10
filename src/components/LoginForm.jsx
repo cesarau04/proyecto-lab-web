@@ -111,11 +111,11 @@ const LoginForm = (props) => {
         <div className="row center">
           <div className="col s12">
             <button
-              className="bold btn waves-effect waves-light  btn-large blue "
+              className="bold waves-effect waves-light  btn-large blue "
               type="submit"
               onClick={handleLogin}
             >
-              <p className="elegant mrgTopCorrection">Take me Home</p>
+              <p className="mrgTopCorrection">Take me Home</p>
             </button>
           </div>
         </div>
