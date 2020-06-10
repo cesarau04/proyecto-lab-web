@@ -167,6 +167,10 @@ li {
     max-height: 900px;
 }
 
+.parallax{
+    z-index: 1!important;
+}
+
 h1,
 h2,
 h3,
