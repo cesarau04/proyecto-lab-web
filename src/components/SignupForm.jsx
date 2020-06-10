@@ -16,6 +16,7 @@ const SignupForm = (props) => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const usernameRef = useRef(null);
+  const phoneNumberRef = useRef(null);
 
   const history = useHistory();
 
@@ -25,6 +26,7 @@ const SignupForm = (props) => {
     let currentEmail = emailRef.current.value;
     let currentPassword = passwordRef.current.value;
     let currentUsername = usernameRef.current.value;
+    let currentPhoneNumber = phoneNumberRef.current.value;
 
     if (
       currentEmail !== "" &&
@@ -32,7 +34,9 @@ const SignupForm = (props) => {
       currentPassword !== "" &&
       currentPassword &&
       currentUsername &&
-      currentUsername !== ""
+      currentUsername !== "" &&
+      currentPhoneNumber &&
+      currentPhoneNumber !== ""
     ) {
       myFirebase
         .auth()
@@ -63,6 +67,7 @@ const SignupForm = (props) => {
                   email: currentEmail,
                   username: currentUsername,
                   picture: "a profile pic",
+                  phonenumber: currentPhoneNumber,
                 });
             });
         })
@@ -101,7 +106,7 @@ const SignupForm = (props) => {
             type="tel"
             name="aphonenumer"
             className="validate"
-            // ref={phonenumberRef}
+            ref={phoneNumberRef}
             required
           />
           <label htmlFor="(+XX) XXX XXX XX XX"></label>
