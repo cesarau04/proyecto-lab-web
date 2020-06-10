@@ -9,7 +9,7 @@ const ProfilePage = () => {
   return (
     <div className="container center">
       <div className="z-depth-3 center-sign bgWhite">
-        <NavBar logoSize={""} current={""} dark={"True"} />
+        <NavBar logoSize={""} current={"Profile"} dark={"True"} />
         <div className="container">
           <div className="row">
             <div className="col s4">
