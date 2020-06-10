@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
+
 import NavBar from './NavBar';
 import PlacesSuggestionPage from './PlacesSuggestionPage';
 import SearchForm from './SearchForm';

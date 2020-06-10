@@ -10,9 +10,9 @@ const PlaceCard = (props) => {
                     <img className="activator" src="Img/v8.png"/>
                 </div>
             <div className="card-content white-text">
-                <span className="card-title">Cuarto #1</span>
-                <p>Descripción 1</p>
-                <p>Precio $$$$$$</p>
+                <span className="card-title">{props.title}</span>
+                <p>{props.description}</p>
+                <p>{props.price}</p>
             </div>
         </div>
     </div>
