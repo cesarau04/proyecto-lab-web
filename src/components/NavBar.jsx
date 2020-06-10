@@ -1,7 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom';
-import LoginForm from './LoginForm'
 import './StayNear.css';
 import { useHistory } from "react-router-dom";
 
