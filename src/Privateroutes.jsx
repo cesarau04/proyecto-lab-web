@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 
 import HomePage from './components/HomePage'
 import LoginPage from './components/LoginPage';
+import HostPage from './components/HostPage';
 
 import { LogInAction, UserIdAction } from "./actions/index";
 import { useHistory } from "react-router-dom";
+import SearchPage from './components/SearchPage';
+import SignupPage from './components/SignupPage';
 
 const Privateroutes = props => {
     const history = useHistory();
@@ -19,6 +22,9 @@ const Privateroutes = props => {
                     <Route exact path="/" component={HomePage} />
                     <Route path="/login" render={() => <Redirect to="/" />} />
                     <Route exact path="/home" component={HomePage} />
+                    <Route exact path="/host" component={HostPage} />
+                    <Route exact path="/search" component={SearchPage} />
+                    <Route exact path="/signup" component={SignupPage} />
                     {/* <Route path="/404" component={Notfound} /> */}
                     {/* <Route path="*" render={() => <Redirect to="/404" />} /> */}
                 </Switch>

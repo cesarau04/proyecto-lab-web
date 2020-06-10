@@ -10,7 +10,7 @@ const SearchPage = () => {
     return (
         <div className="container center" >
             <div className="z-depth-3 center-sign bgWhite">
-                <NavBar logoSize={""} current={""} dark={"True"} />
+                <NavBar logoSize={""} current={"Search"} dark={"True"} />
                 <div className="container">
                     <h2>Search</h2>
                     <h5>Book for 1-night & stay with students like you</h5>
