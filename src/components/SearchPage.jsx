@@ -24,7 +24,9 @@ const SearchPage = () => {
   }, []);
 
   const filterRooms = (filters) => {
-    console.log(filters);
+    for(var room in rooms) {
+      
+    }
   };
 
   return (

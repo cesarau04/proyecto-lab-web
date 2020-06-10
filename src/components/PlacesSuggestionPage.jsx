@@ -12,9 +12,9 @@ const PlacesSuggestionPage = (props) => {
       >
         {
           props.rooms &&
-          props.rooms.map((room) => {
+          props.rooms.map((room, index) => {
             return (
-              <PlaceCard rowSize={props.rowSize} title={room.name} description={room.description} price={room.price} />
+              <PlaceCard key={index} rowSize={props.rowSize} title={room.name} description={room.description} price={room.price} />
             );
           })
         }

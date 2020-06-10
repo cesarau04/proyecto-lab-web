@@ -5,9 +5,9 @@ import "./StayNear.css";
 // LOGICA DE FIREBASE
 
 const SearchForm = (props) => {
-    const [selectedPrice, setSelectedPrice ] = useState(null);
-    const [selectedState, setSelectedState] = useState(null);
-    const [selectedSchool, setSelectedSchool] = useState(null)
+  const [selectedPrice, setSelectedPrice] = useState(null);
+  const [selectedState, setSelectedState] = useState(null);
+  const [selectedSchool, setSelectedSchool] = useState(null);
 
   useEffect(() => {
     let elements = document.querySelectorAll("select");
@@ -15,55 +15,69 @@ const SearchForm = (props) => {
   }, []);
 
   const preCallback = () => {
-    if (!selectedPrice || !selectedState || !selectedSchool)
-      return
-    let filters = {price: selectedPrice, state: selectedState, school: selectedSchool}
-    props.callback(filters)
+    let filters = {
+      price: selectedPrice,
+      state: selectedState,
+      school: selectedSchool,
+    };
+
+    if (!selectedPrice) {
+      filters = { ...filters, price: "All" };
+    }
+    if (!selectedState) {
+      filters = { ...filters, state: "Jalisco" };
+    }
+    if (!selectedSchool) {
+      filters = { ...filters, school: "ITESM" };
+    }
+
+    filters = props.callback(filters);
   };
 
   return (
     <div>
       <div className="input-field col s12">
-        <select onChange={(e) => setSelectedPrice(e.target.value)}>
-          <option value="" disabled selected>
-            Range
+        <select
+          onChange={(e) => setSelectedPrice(e.target.value)}
+        >
+          <option value="All" defaultValue>
+            All
           </option>
-          <option value="3">All</option>
-          <option value="1">&#60; 100</option>
-          <option value="2">100 - 250</option>
-          <option value="3">&#62; 250</option>
+          <option value="<100">&#60; 100</option>
+          <option value="100-250">100 - 250</option>
+          <option value=">250">&#62; 250</option>
         </select>
         <label>Prize</label>
       </div>
 
       <div className="input-field col s12">
         <select onChange={(e) => setSelectedState(e.target.value)}>
-          <option value="" disabled defaultValue>
-            Choose a state
+          <option value="Jalisco" defaultValue>
+            Jalisco
           </option>
-          <option value="1">Nayarit</option>
-          <option value="2">Jalisco</option>
-          <option value="3">Monterrey</option>
-          <option value="3">Cd. de México</option>
+          <option value="Nayarit">Nayarit</option>
+          <option value="Monterrey">Monterrey</option>
+          <option value="Cd. de México">Cd. de México</option>
         </select>
         <label>State</label>
       </div>
 
       <div className="input-field col s12">
         <select onChange={(e) => setSelectedSchool(e.target.value)}>
-          <option value="" disabled defaultValue>
-            Choose a School
+          <option value="ITESM" defaultValue>
+            ITESM
           </option>
-          <option value="1">ITESM</option>
-          <option value="2">ITESO</option>
-          <option value="3">UNAM</option>
-          <option value="4">UDG</option>
-          <option value="5">UAG</option>
+          <option value="ITESO">ITESO</option>
+          <option value="UNAM">UNAM</option>
+          <option value="UDG">UDG</option>
+          <option value="UAG">UAG</option>
         </select>
         <label>School</label>
       </div>
 
-      <a className="waves-effect waves-light btn" onClick={preCallback}>FILTER</a>
+      <a className="waves-effect waves-light btn" onClick={preCallback}>
+        FILTER
+      </a>
     </div>
   );
 };
