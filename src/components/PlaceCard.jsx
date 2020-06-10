@@ -9,8 +9,8 @@ const PlaceCard = (props) => {
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="Img/v8.png"/>
                 </div>
-            <div class="card-content white-text">
-                <span class="card-title">Cuarto #1</span>
+            <div className="card-content white-text">
+                <span className="card-title">Cuarto #1</span>
                 <p>Descripción 1</p>
                 <p>Precio $$$$$$</p>
             </div>

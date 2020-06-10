@@ -1,6 +1,6 @@
 import { SET_LOGIN_ACTION, SET_USER_ID_ACTION } from "../actions/constants";
 
-const DEFAULT_STATE = {}
+const DEFAULT_STATE = { bIsLoggedIn: false }
 export default (state = DEFAULT_STATE, action) => {
     switch (action.type) {
         case SET_LOGIN_ACTION:

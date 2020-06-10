@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useRef } from 'react';
+
+import { connect } from 'react-redux';
+import myFirebaseInstance from '../firebase/myfirebase'
+import { LogInAction, UserIdAction } from "../actions/index";
+
+import { useHistory } from "react-router-dom";
+
 import './StayNear.css';
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    const history = useHistory();
+
+    const handleLogin = () => {
+
+        const myFirebase = myFirebaseInstance.getInstance();
+
+        let currentEmail = emailRef.current.value
+        let currentPassword = passwordRef.current.value
+
+        if (currentEmail !== "" && currentEmail && currentPassword !== "" && currentPassword) {
+            myFirebase.auth().signInWithEmailAndPassword(currentEmail, currentPassword)
+                .catch((error) => { console.error(error); })
+                .then((data) => {
+                    props.dispatch(LogInAction(true))
+                    props.dispatch(UserIdAction(data.user.uid))
+                    localStorage.setItem('userid', data.user.uid)
+                    history.push("/home");
+                })
+        }
+    };
+
     return (
         <div className="bgCr1 right-medium-sign right z-depth-3 waves-effect waves-light">
             <div className="row center bold">
-            <h5 className="txtWhite mrgTopCorrection">Welcome</h5>
+                <h5 className="txtWhite mrgTopCorrection">Welcome</h5>
             </div>
 
             <div className="row">
                 <div className="input-field col s12">
-                    <input placeholder="Email" id="input_email" type="email" name="aemail" className="validate" required />
+                    <input placeholder="Email" id="input_email" type="email" name="aemail" className="validate" ref={emailRef} required />
                     <label htmlFor="email"></label>
                 </div>
             </div>
@@ -19,18 +48,25 @@ const LoginForm = () => {
 
             <div className="row">
                 <div className="input-field col s12">
-                    <input placeholder="password" id="input_password" type="password" name="apassword" className="validate" required/>
+                    <input placeholder="password" id="input_password" type="password" name="apassword" className="validate" ref={passwordRef} required />
                 </div>
             </div>
 
-            
+
 
             <div className="row center">
                 <div className="col s12">
-                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" ><p className="elegant mrgTopCorrection">Take me Home</p></button>
+                    <button className="bold btn waves-effect waves-light  btn-large blue " type="submit" onClick={handleLogin}><p className="elegant mrgTopCorrection">Take me Home</p></button>
                 </div>
             </ div>
         </div>
     );
 }
-export default LoginForm;
+
+const mapStateToProps = (state) => {
+    return {
+        bIsLoggedIn: state.auth.bIsLoggedIn
+    };
+}
+
+export default connect(mapStateToProps)(LoginForm);
