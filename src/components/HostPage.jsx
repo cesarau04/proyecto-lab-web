@@ -1,10 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
+
 import NavBar from './NavBar';
 import HostQuestions from './HostQuestions';
 import ParallaxImage from './ParallaxImage';
 import './StayNear.css';
-// LOGICA DE FIREBASE
+
 
 const BecomehostPage = () => {
     return (
@@ -17,7 +17,7 @@ const BecomehostPage = () => {
                 <ParallaxImage/>
 
                 <div className="container">
-                    
+
                     <HostQuestions/>
                     <div className="row">
                         <div className="col s12">

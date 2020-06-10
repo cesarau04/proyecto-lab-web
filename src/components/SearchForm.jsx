@@ -6,11 +6,11 @@ const SearchForm = () => {
     return (
         <div>
             <form action="#">
-                <p class="range-field">
+                <p className="range-field">
                     <input type="range" id="test5" min="0" max="100" />
                 </p>
             </form>
-            <div class="input-field col s12">
+            <div className="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose a state</option>
                     <option value="1">Nayarit</option>
@@ -21,7 +21,7 @@ const SearchForm = () => {
                 <label>State</label>
             </div>
 
-            <div class="input-field col s12">
+            <div className="input-field col s12">
                 <select>
                     <option value="" disabled selected>Choose a School</option>
                     <option value="1">ITESM</option>
