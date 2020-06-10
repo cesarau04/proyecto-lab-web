@@ -21,6 +21,10 @@ const NavBar = (props) => {
         history.push("/signup");
     }
 
+    const goHome = () => {
+        history.push("/home");
+    }
+
     return (
         <div className="nav-bar">
             <div className="left">
@@ -35,7 +39,7 @@ const NavBar = (props) => {
             <div className={(props.logoSize === 'Big' ? 'logo-big' : 'logo-small')} >
                 <ul>
                     <li>
-                        <img src="/Img/logo.png" />
+                        <img src="/Img/logo.png" onClick={goHome}/>
                     </li>
                 </ul>
             </div>
